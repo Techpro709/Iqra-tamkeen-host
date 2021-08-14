@@ -1,0 +1,244 @@
+h3,h5,p{
+  text-align: center;
+}
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+h1,h2,h4,h6,p{
+    text-align: center;
+}
+
+body {
+    font-family: "Didact Gothic", sans-serif;
+    height: auto;
+ 
+
+}
+.navbar .navbar-nav .nav-link {
+    color: #ffffff;
+    font-size: 1.3em;
+}
+.navbar .navbar-nav .nav-link:hover{
+    color: #808080;
+}
+@media only screen and (min-width: 960px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .navbar .nav-item {
+    padding: 0.5em 1em;
+  }
+}
+.navbar .navbar-nav {
+
+  border-top: 2px solid #000;
+}
+#head1{
+width: 100%;
+height: auto;
+
+}
+.logo,img:not(.rimage):not(.restrictedimg){
+  padding-bottom: 0;
+  display: block;
+  margin: auto;
+
+}
+img:not(.restrictedimg){
+  border-radius: 10%;
+}
+td i{
+  text-align: center;
+
+}
+.container{
+  position: relative;
+}
+
+.target{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+body, html {
+  height: 100%;
+}
+
+.parallax {
+  /* The image used */
+  background-image: url('/imgs/quran-being-held-hands-close-up.jpg');
+
+  /* Full height */
+  height: 50%; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Turn off parallax scrolling for tablets and phones. Increase the pixels if needed */
+@media only screen and (max-device-width: 1366px) {
+  .parallax,.parallax2 {
+    background-attachment: scroll;
+  }
+}
+.parallax2 {
+  /* The image used */
+  background-image: url('/imgs/close-up-islamic-new-year-with-quran-book.jpg');
+
+  /* Full height */
+  height: 50%; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.parallax3 {
+  /* The image used */
+  background-image: url('/imgs/faseeh-fawaz-Dt1vFAPZmUI-unsplash.jpg');
+
+  /* Full height */
+  height: 30%; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  background-color: #45a1ff;
+  color: #fff;
+}
+a { 
+  color:rgb(0, 0, 0);
+  text-decoration:none;
+}
+a:hover, a:focus {
+  color:#212529;
+  text-decoration:underline;
+}
+div.textbox{
+  max-width: 1500px;
+  margin: auto;
+}
+* {
+  box-sizing: border-box;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+button.center{
+  display: block;
+  margin: auto;
+}
+:lang(ar) > span {
+    font-size: 22px;
+}
+.textLeft{
+  text-align:left;
+  max-width: 600px;
+  border: 0px;
+  padding: 0px;
+  margin: 40px;
+}
+.rimage{
+  border: 0px;
+  padding: 0px;
+  margin: 40px;
+  margin-top: 40px;
+  margin-left: 150px;
+}
+
+.flip-card {
+  margin: auto;
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
