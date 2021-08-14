@@ -80,7 +80,7 @@ body, html {
 
 .parallax {
   /* The image used */
-  background-image: url('/imgs/quran-being-held-hands-close-up.jpg');
+  background-image: url('https://github.com/Techpro709/Iqra-tamkeen-host/blob/main/imgs/quran-being-held-hands-close-up.jpg?raw=true');
 
   /* Full height */
   height: 50%; 
@@ -100,7 +100,7 @@ body, html {
 }
 .parallax2 {
   /* The image used */
-  background-image: url('/imgs/close-up-islamic-new-year-with-quran-book.jpg');
+  background-image: url('https://github.com/Techpro709/Iqra-tamkeen-host/blob/main/imgs/close-up-islamic-new-year-with-quran-book.jpg?raw=true');
 
   /* Full height */
   height: 50%; 
@@ -113,7 +113,7 @@ body, html {
 }
 .parallax3 {
   /* The image used */
-  background-image: url('/imgs/faseeh-fawaz-Dt1vFAPZmUI-unsplash.jpg');
+  background-image: url('https://github.com/Techpro709/Iqra-tamkeen-host/blob/main/imgs/faseeh-fawaz-Dt1vFAPZmUI-unsplash.jpg?raw=true');
 
   /* Full height */
   height: 30%; 

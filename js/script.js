@@ -1,5 +1,5 @@
-var ar1 = '';
-var en1 = '';
+var ar1 = 'don\x27t see file';
+var en1 = "don\x27t see file";
 var file= '';
 console.log("Script.js Loaded");
 
@@ -41,39 +41,61 @@ window.addEventListener("load", myInit, true); function myInit() {
   includeHTML();
   w3IncludeHTML();
   
-readTextFile("/text/Arabic-Lorem.txt");
-readTextFile("/text/English-Lorem.txt");
+// readTextFile("https://raw.githubusercontent.com/Techpro709/Iqra-tamkeen-host/main/text/Arabic-Lorem.txt");
+// readTextFile("https://raw.githubusercontent.com/Techpro709/Iqra-tamkeen-host/main/text/English-Lorem.txt");
 };
-function readTextFile(file) {
-  var rawFile = new XMLHttpRequest();
-  rawFile.open("GET", file, false);
-  rawFile.onreadystatechange = function () {
-    if (file == '/text/Arabic-Lorem.txt') {
-      if (rawFile.readyState === 4) {
-        if (rawFile.status === 200 || rawFile.status == 0) {
-          ar1 = rawFile.responseText;
-        }else{
-          console.log('error');
-        }
-      }
-    } else if (file == '/text/English-Lorem.txt')
+// function readTextFile(file) {
+//   var rawFile = new XMLHttpRequest();
+//   rawFile.open("GET", file, true);
+//   rawFile.onreadystatechange = function () {
+//     if (file == 'https://raw.githubusercontent.com/Techpro709/Iqra-tamkeen-host/main/text/Arabic-Lorem.txt') {
+//       if (rawFile.readyState === 4) {
+//         if (rawFile.status === 200 || rawFile.status == 0) {
+//           ar1 = rawFile.responseText;
+//         }else{
+//           console.log('error');
+//         }
+//       }
+//     } else if (file == 'https://raw.githubusercontent.com/Techpro709/Iqra-tamkeen-host/main/text/English-Lorem.txt')
       
-    if (rawFile.readyState === 4) {
-      if (rawFile.status === 200 || rawFile.status == 0) {
-        en1 = rawFile.responseText;
-      }else{
-        console.log('error');
+//     if (rawFile.readyState === 4) {
+//       if (rawFile.status === 200 || rawFile.status == 0) {
+//         en1 = rawFile.responseText;
+//       }else{
+//         console.log('error');
+//       }
+//     }
+//   } 
+//   rawFile.send(null);
+// }
+
+
+// readTextFile("https://raw.githubusercontent.com/Techpro709/Iqra-tamkeen-host/main/text/Arabic-Lorem.txt");
+// readTextFile("https://raw.githubusercontent.com/Techpro709/Iqra-tamkeen-host/main/text/English-Lorem.txt");
+
+// read text from URL location
+getText(en1)
+
+function getText(en1){
+  var request = new XMLHttpRequest();
+  request.open('GET', 'https://raw.githubusercontent.com/Techpro709/Iqra-tamkeen-host/main/text/English-Lorem.txt', true);
+  request.send(null);
+  request.onreadystatechange = function () {
+      if (request.readyState === 4 && request.status === 200) {
+          var type = request.getResponseHeader('Content-Type');
+          if (type.indexOf("text") !== 1) {
+            en1 = request.responseText;
+            window.en1 = request.responseText;
+              console.log(en1);
+              return en1;
+             
+          }
       }
-    }else{
-      console.error("WARNING: Error reading file")
-    }
-  } 
-  rawFile.send(null);
-}
+  }
+};
 
 
-readTextFile("/text/Arabic-Lorem.txt");
-readTextFile("/text/English-Lorem.txt");
+alert(en1);
 var dictionary = {
   'button-1': {
     'en': 'Switch to Arabic<br>قم بالتبديل إلى اللغة العربية',
