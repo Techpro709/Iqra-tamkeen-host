@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="http://www.w3schools.com/lib/w3data.js"></script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iqra Research</title>
+
+
+</head>
+
+<body onload="toTop()">
+
+    <div w3-include-html="header.html"></div>
+
+    <div class="parallax">
+    </div>
+    <div class="textbox">
+        <br>
+        <h1><b>IQRA Islamic & Quranic Research Association is composed of</b></h1>
+        <br>
+
+        <div class="row">
+            <div class="column">
+                <div class="card">
+                    <br>
+                    <a href="/mission.html">
+                        <div class="container">
+                            <div class="target">
+                                <br>
+                                <img src="/imgs/Bootstrap-Icons/People fill.svg" height="70px" alt="People Icon">
+                                <br>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <h3>People</h3>
+                    </a>
+                    <h5> The foundation of the Center for Data Science lies in the strength of our faculty researchers.
+                    </h5>
+
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <br>
+                    <a href="/projects.html">
+                        <div class="container">
+                            <div class="target">
+                                <br>
+                                <img src="/imgs/Bootstrap-Icons/Journal text.svg" height="70px" alt="Building"> <br>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <h3>Research Projects</h3>
+                    </a>
+                    <h5>Students and faculty collaborate on relevant research projects, unlike this text which is
+                        meaningless.</h5>
+
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <br>
+                    <div class="container">
+                        <div class="target">
+                            <br>
+                            <img src="/imgs/Bootstrap-Icons/Globe.svg" height="70px" alt="Building">
+                            <br>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <h3>Community</h3>
+                    <h5>Seminars bring experts from far and near for succinct discussion-centric presentations.</h5>
+
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <br>
+                    <div class="container">
+                        <div class="target">
+                            <br>
+                            <img src="/imgs/Bootstrap-Icons/Building.svg" height="70px" alt="Building">
+                            <br>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <h3>Partners</h3>
+                    <h5>Industry partners are our strong supporters and research collaborators.</h5>
+
+                </div>
+                <br>
+
+            </div>
+        </div>
+        <br>
+        <img width="600px" src="/imgs/faseeh-fawaz-Dt1vFAPZmUI-unsplash.jpg" alt="picture">
+        <br>
+    </div>
+    <div class="parallax2"></div>
+    <div class="textbox t2">
+        <br>
+        <h3>FEATURED PROJECT - <b>Lorem ipsum dolor</b></h3>
+        <button onclick="change_lang()" type="button" class="btn center btn-primary">
+            <div data-translate="button-1"></div>
+        </button>
+        <br>
+        <p data-translate="lorem"></p>
+
+        <img width="600px" src="/imgs/ashkan-forouzani-7blIFp0kFP4-unsplash.jpg" alt="picture">
+        <br>
+    </div>
+    <div class="parallax2"></div>
+    <script src="js/script.js"></script>
+    <footer>
+        <p>© 2021 IQRA</p>
+    </footer>
+    <script>
+        $(function () {
+            $(".t2").hide();
+            $(".row").hide();
+            $(".t2").show(2000)
+            $(".row").show(2000)
+        });
+
+        $('document').ready(function () {
+            $(window).scrollTop(0);
+        });
+        toTop()
+    </script>
+
+</body>
+
+</html>
