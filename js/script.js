@@ -37,13 +37,7 @@ function includeHTML() {
     }
   }
 };
-window.addEventListener("load", myInit, true); function myInit() {
-  includeHTML();
-  w3IncludeHTML();
 
-  // readTextFile("https://raw.githubusercontent.com/Techpro709/Iqra-tamkeen-host/main/text/Arabic-Lorem.txt");
-  // readTextFile("https://raw.githubusercontent.com/Techpro709/Iqra-tamkeen-host/main/text/English-Lorem.txt");
-};
 // function readTextFile(file) {
 //   var rawFile = new XMLHttpRequest();
 //   rawFile.open("GET", file, true);
