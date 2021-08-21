@@ -242,3 +242,10 @@ button.center{
   color: white;
   transform: rotateY(180deg);
 }
+.hb{
+  border-inline-start: lightseagreen 5px solid;
+}
+
+.inline-block-child {
+  display: inline-block;
+}
