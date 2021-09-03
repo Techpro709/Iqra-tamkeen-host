@@ -26,7 +26,7 @@ body {
  
 
 }
-.navbar .navbar-nav .nav-link {
+/* .navbar .navbar-nav .nav-link {
     color: #ffffff;
     font-size: 1.3em;
 }
@@ -45,7 +45,7 @@ body {
 .navbar .navbar-nav {
 
   border-top: 2px solid #000;
-}
+} */
 #head1{
 width: 100%;
 height: auto;
@@ -76,6 +76,7 @@ td i{
 }
 body, html {
   height: 100%;
+  overflow-x: hidden;
 }
 
 .parallax {
@@ -94,8 +95,8 @@ body, html {
 
 /* Turn off parallax scrolling for tablets and phones. Increase the pixels if needed */
 @media only screen and (max-device-width: 1366px) {
-  .parallax,.parallax2 {
-    background-attachment: scroll;
+  .parallax, .parallax2, .parallax3 {
+    background-attachment: scroll!important;
   }
 }
 .parallax2 {
@@ -139,8 +140,13 @@ a:hover, a:focus {
   color:#212529;
   text-decoration:underline;
 }
-div.textbox{
-  max-width: 1500px;
+div.textbox :not(.tb1) :not(.no-resize) :not(.card){
+  /* max-width: 1700px;
+  margin: auto; */
+  width: 100%;
+}
+div.tb1{
+  max-width: 1700px;
   margin: auto;
 }
 * {
@@ -171,6 +177,11 @@ div.textbox{
     display: block;
     margin-bottom: 20px;
   }
+  div.textbox :not(.tb1){
+    /* max-width: 1700px;
+    margin: auto; */
+    width: 100%;
+  }
 }
 
 /* Style the counter cards */
@@ -188,7 +199,7 @@ button.center{
     font-size: 22px;
 }
 .textLeft{
-  text-align:left;
+  text-align:justify;
   max-width: 600px;
   border: 0px;
   padding: 0px;
@@ -247,5 +258,15 @@ button.center{
 }
 
 .inline-block-child {
+  max-width: 49.5%;
   display: inline-block;
+  padding-inline: 20px;
+}
+.column {
+  display: table;
+}
+
+.card{
+  display: table-cell;
+  height: auto;
 }

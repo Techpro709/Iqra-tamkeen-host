@@ -1,3 +1,4 @@
+var z = localStorage.getItem('langPref');
 var ar1 = 'don\x27t see file';
 var en1 = "don\x27t see file";
 var file = '';
@@ -8,6 +9,7 @@ window.onbeforeunload = function () {
 }
 function toTop() {
   window.scrollTo(0, 0);
+  trans()
 }
 
 function includeHTML() {
@@ -37,7 +39,40 @@ function includeHTML() {
     }
   }
 };
+window.addEventListener("load", myInit, true); function myInit() {
+  includeHTML();
+  w3IncludeHTML();
+  setTimeout(translate, 3000);
+  setTimeout(translate, 5000);
+  // readTextFile("https://raw.githubusercontent.com/Techpro709/Iqra-tamkeen-host/main/text/Arabic-Lorem.txt");
+  // readTextFile("https://raw.githubusercontent.com/Techpro709/Iqra-tamkeen-host/main/text/English-Lorem.txt");
+};
 
+
+function trans() {
+  setTimeout(trans, 3000);
+
+  if (localStorage.getItem('langPref') == "Arabic") {
+    current_lang_index = 1;
+    current_lang = langs[current_lang_index];
+    document.getElementById("ar").selected = 'true';
+    console.debug('ar')
+  }
+  else if (localStorage.getItem('langPref') == "English") {
+    current_lang_index = 0;
+    current_lang = langs[current_lang_index];
+    document.getElementById("en").selected = 'true';
+    console.debug('en')
+  }
+  else {
+    current_lang_index = 0;
+    current_lang = langs[current_lang_index];
+    document.getElementById("en").selected = 'true';
+    console.debug('en')
+  }
+  translate()
+  console.debug('translating');
+}
 // function readTextFile(file) {
 //   var rawFile = new XMLHttpRequest();
 //   rawFile.open("GET", file, true);
@@ -93,14 +128,22 @@ function includeHTML() {
 fetch('https://raw.githubusercontent.com/Techpro709/Iqra-tamkeen-host/main/text/English-Lorem.txt')
   .then(response => response.text())
   .then((data) => {
-    console.log(data)
     en1 = data;
     fetch('https://raw.githubusercontent.com/Techpro709/Iqra-tamkeen-host/main/text/Arabic-Lorem.txt')
       .then(response => response.text())
       .then((data) => {
-        console.log(data)
         ar1 = data;
-        fetchDun()
+        fetch('https://raw.githubusercontent.com/Techpro709/Iqra-tamkeen-host/main/text/peopleTxt.txt')
+          .then(response => response.text())
+          .then((data) => {
+            en2 = data;
+            fetch('https://raw.githubusercontent.com/Techpro709/Iqra-tamkeen-host/main/text/peopleTxt-ar.txt')
+              .then(response => response.text())
+              .then((data) => {
+                ar2 = data;
+                fetchDun()
+              })
+          })
       })
   })
 
@@ -120,6 +163,57 @@ function fetchDun() {
     'lorem': {
       'en': en1,
       'ar': ar1,
+    }, 'peopleTxt': {
+      'en': en2,
+      'ar': ar2,
+    }, 'people': {
+      'en': 'People',
+      'ar': 'اشخاص',
+    }, 'projects': {
+      'en': 'Research Projects',
+      'ar': 'المشاريع البحثية',
+    }, 'projectsTxt': {
+      'en': 'Students and faculty collaborate on relevant research projects, unlike this text which is meaningless.',
+      'ar': 'يتعاون الطلاب وأعضاء هيئة التدريس في مشاريع بحثية ذات صلة ، على عكس هذا النص الذي لا معنى له.',
+    }, 'communityTxt': {
+      'en': 'Seminars bring experts from far and near for succinct discussion-centric presentations.',
+      'ar': 'تجلب الندوات خبراء من بعيد ومن قريب لتقديم عروض تقديمية موجزة تتمحور حول المناقشة.',
+    }, 'community': {
+      'en': 'Community',
+      'ar': 'تواصل اجتماعي',
+    }
+    , 'partners': {
+      'en': 'Partners',
+      'ar': 'شركاء',
+    }, 'partnersTxt': {
+      'en': 'Industry partners are our strong supporters and research collaborators.',
+      'ar': 'شركاء الصناعة هم داعمونا الأقوياء والمتعاونون في البحث.',
+    }, 'iqraHeader': {
+      'en': 'IQRA Islamic & Quranic Research Association is composed of',
+      'ar': 'تتكون جمعية البحوث الإسلامية والقرآنية من',
+    },
+    'featured': {
+      'en': 'FEATURED PROJECT - <b>Making This Website</b>',
+      'ar': 'مشروع مميز - <b> إنشاء موقع الويب هذا </ b>',
+    },
+    'nav-mission': {
+      'en': 'Mission',
+      'ar': 'بعثة',
+    }, 'nav-projects': {
+      'en': 'Projects',
+      'ar': 'المشاريع',
+    }, 'nav-pub': {
+      'en': 'Publications',
+      'ar': 'المنشورات',
+    }, 'nav-seminars': {
+      'en': 'Seminars',
+      'ar': 'ندوات',
+    }, 'nav-top-stories': {
+      'en': 'Top Stories',
+      'ar': 'أهم الأخبار',
+    }, 'nav-logo': {
+      'en': '<b>IQRA</b>',
+      'ar': '<b>اقرأ</b>',
     }
   };
   translate();
@@ -134,12 +228,19 @@ var current_lang = langs[current_lang_index];
 window.change_lang = function () {
   x = document.getElementById("en").selected;
   y = document.getElementById("ar").selected;
-  if (x == true) {
+  console.debug('activated' + ' x = ' + x + ' y = ' + y);
+  if (x == true && y == false) {
+    current_lang_index = 0;
+    current_lang = langs[current_lang_index];
+    localStorage.setItem('langPref', 'English');
+    console.debug('setting lang to en, result ' + localStorage.getItem('langPref'));
+  } else if (x == false && y == true) {
     current_lang_index = 1;
     current_lang = langs[current_lang_index];
-  }else if(y == true) {
-    current_lang_index = 1;
-    current_lang = langs[current_lang_index];
+    localStorage.setItem('langPref', 'Arabic');
+    console.debug('setting lang to ar, result ' + localStorage.getItem('langPref'));
+  } else {
+    console.debug('ERROR');
   }
 
   // current_lang_index = ++current_lang_index % 2;
@@ -153,8 +254,3 @@ function translate() {
     $(this).html(dictionary[key][current_lang] || "N/A");
   });
 }
-
-
-$(function () {
-  $('.selectpicker').selectpicker();
-});
