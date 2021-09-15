@@ -170,19 +170,7 @@ div.tb1{
   clear: both;
 }
 
-/* Responsive columns */
-@media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-    display: block;
-    margin-bottom: 20px;
-  }
-  div.textbox :not(.tb1){
-    /* max-width: 1700px;
-    margin: auto; */
-    width: 100%;
-  }
-}
+
 
 /* Style the counter cards */
 .card {
@@ -269,4 +257,26 @@ button.center{
 .card{
   display: table-cell;
   height: auto;
+}
+
+.img-500{
+  max-height: 500px;
+  margin-bottom: 20px!important;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+  div.textbox :not(.tb1){
+    /* max-width: 1700px;
+    margin: auto; */
+    width: 100%;
+  }
+  .inline-block-child{
+    max-width: 100%;
+  }
 }

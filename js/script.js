@@ -73,58 +73,7 @@ function trans() {
   translate()
   console.debug('translating');
 }
-// function readTextFile(file) {
-//   var rawFile = new XMLHttpRequest();
-//   rawFile.open("GET", file, true);
-//   rawFile.onreadystatechange = function () {
-//     if (file == 'https://raw.githubusercontent.com/Techpro709/Iqra-tamkeen-host/main/text/Arabic-Lorem.txt') {
-//       if (rawFile.readyState === 4) {
-//         if (rawFile.status === 200 || rawFile.status == 0) {
-//           ar1 = rawFile.responseText;
-//         }else{
-//           console.log('error');
-//         }
-//       }
-//     } else if (file == 'https://raw.githubusercontent.com/Techpro709/Iqra-tamkeen-host/main/text/English-Lorem.txt')
 
-//     if (rawFile.readyState === 4) {
-//       if (rawFile.status === 200 || rawFile.status == 0) {
-//         en1 = rawFile.responseText;
-//       }else{
-//         console.log('error');
-//       }
-//     }
-//   } 
-//   rawFile.send(null);
-// }
-
-
-// readTextFile("https://raw.githubusercontent.com/Techpro709/Iqra-tamkeen-host/main/text/Arabic-Lorem.txt");
-// readTextFile("https://raw.githubusercontent.com/Techpro709/Iqra-tamkeen-host/main/text/English-Lorem.txt");
-
-// read text from URL location
-// getText(en1)
-
-// function getText(en1){
-//   var request = new XMLHttpRequest();
-//   request.open('GET', 'https://raw.githubusercontent.com/Techpro709/Iqra-tamkeen-host/main/text/English-Lorem.txt', true);
-//   request.send(null);
-//   request.onreadystatechange = function () {
-//       if (request.readyState === 4 && request.status === 200) {
-//           var type = request.getResponseHeader('Content-Type');
-//           if (type.indexOf("text") !== 1) {
-//             en1 = request.responseText;
-//             window.en1 = request.responseText;
-//             console.log(en1);
-//             return en1;
-
-//           }
-//       }else{
-//         return false;
-//       }
-//       alert(en1);
-//   }
-// };
 fetch('https://raw.githubusercontent.com/Techpro709/Iqra-tamkeen-host/main/text/English-Lorem.txt')
   .then(response => response.text())
   .then((data) => {
